@@ -1,126 +1,139 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-
-    background-color: var(--color-background);
-    padding: 1rem;
-`;
-
-export const Content = styled.main`
-    width: 100%;
-    height: auto;
-
-    margin-top: 5rem;
-
-    .container{
-        display: flex;
-        align-items: center;
-        gap: 14rem;
-    }
-
-    .info{
-        width: 43.5rem;
-        height: 23rem;
-
-        margin-left: 14.5rem;
-
-        .logo{
-        width: 43.5rem;
-        }
-
-        .desc{
-            color: var(--color-text-in-primary);
-            font-size: 3.6rem;
-        }
-    
-    }
-
-    .LandingImage{
-        width: 60rem;
-    }
-
-`;
-
-export const ButtonArea = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    width: 100%;
-    height: auto;
+    height: 100vh;
+    width: 100vw;
 
-    margin-top: 5rem;
+    color: var(--color-text-in-primary);
+    background-color: var(--color-primary);
 
-    .buttonContainer{
-        display: flex;
-        gap: 1.6rem;
-
-        /* background-color: blue; */
-        margin-left: 14.5rem;
-        width: auto;
+    .logo-box{
+        text-align: center;
+        margin-bottom: 0rem;
     }
 
-    .study{
+    .logo-box img{
+        width: 30rem;
+    }
+
+    .logo-box h2{
+        font-weight: 500;
+        font-size: 2.4rem;
+        line-height: 4.6rem;
+    }
+
+    .landingImg{
+        width: 100%;
+        max-width: 50rem;
+    }
+
+    .button-box{
+        display: flex;
+        justify-content: center;
+        margin: 3.2rem 0;
+    }
+
+    .button-box .buttons{
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 2.4rem;
 
+        width: 20rem;
+        height: 10.4rem;
+        border-radius: 0.8rem;
+       
+
+        font-family: 'Archivo', sans-serif;
+        font-weight: 700;
         text-decoration: none;
-        font-size: 2.4rem;
         color: var(--color-button-text);
+    }
 
+    .button-box .buttons:first-child{
+        margin-right: 1.6rem;
+    }
+
+    .button-box .study{
         background-color: var(--color-primary-lighter);
-        width: 30rem;
-        padding: 3.2rem 6.4rem;
-        border-radius: .8rem;
 
         transition: background-color .3s;
         &:hover{
             background-color: var(--color-primary-light);
         }
-
-        .study-icon{
-            width: 4rem;
-        }
     }
 
-    .give-classes{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2.4rem;
-
-        text-decoration: none;
-        font-size: 2.4rem;
-        color: var(--color-button-text);
-
+    .button-box .give-classes{
         background-color: var(--color-secundary);
-        width: 30rem;
-        padding: 3.2rem 6.4rem;
-        border-radius: .8rem;
 
         transition: background-color .3s;
         &:hover{
             background-color: var(--color-secundary-dark);
         }
-
-        .give-classes-icon{
-            width: 4rem;
-        }
-
     }
 
-    .connectionsInfo{
+    .total-conections{
         display: flex;
         align-items: center;
-        gap: .5rem;
+        justify-content: center;
 
-        color: var(--color-text-in-primary);
-        font-size: 1.2rem;
+        font-size: 1.4rem;
 
-        margin-right: 10rem;
+        img{
+            margin-left: 0.8rem;
+        }
+    }
+
+    @media(min-width: 700px){
+        .page-content{
+            display: grid;
+        grid-template-rows: 350px 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas:
+         'logo landing landing'
+         'buttons buttons total'
+        ;
+
+        .logo-box{
+            grid-area: logo;
+            text-align: left;
+            align-self: center;
+            margin: 0;
+        }
+
+        .logo-box img{
+            height: 100%;
+        }
+
+        .logo-box h2{
+            text-align: initial;
+            font-size: 3.6rem;
+        }
+        
+        .landingImg{
+            grid-area: landing;
+            justify-self: end;
+        }
+
+        .button-box{
+            grid-area: buttons;
+            justify-self: flex-start;
+        }
+
+        .button-box .buttons{
+            font-size: 2rem;
+            gap: 2rem;
+        }
+
+        .total-conections{
+            grid-area: total;
+
+            justify-self: end;
+        }
+        }
+        
     }
 `;
