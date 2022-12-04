@@ -40,6 +40,13 @@ export const Container = styled.div`
             margin-top: 1.4rem;
         }
 
+        #submitButton{
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+        }
+
         .inputBlock:focus-within::after{
             position: absolute;
             left: 1.6rem;

@@ -7,9 +7,24 @@ import studyIcon from '../../assets/images/icons/study.svg';
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { api } from '../../services/api';
+
+interface TotalProps{
+    total: number
+}
 
 
 export const Landing = () => {
+    const [ totalConnections, setTotalConnections ] = useState(0);
+
+    useEffect(() => {
+        api.get('/connections').then(data => {
+            const { total } = data.data;
+            setTotalConnections(total)
+        })
+    }, [])
+
     return(
         <Container>
             <div className="page-content">
@@ -37,7 +52,7 @@ export const Landing = () => {
                 </div>
 
                 <span className="total-conections">
-                    Total de 0 conexões já realizades.
+                    Total de {totalConnections} conexões já realizades.
                     <img src={purpleHeartIcon} alt="Coração roxo" />
                 </span>
             </div>

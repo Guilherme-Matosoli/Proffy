@@ -71,6 +71,10 @@ export const Container = styled.article`
             }
         }
 
+        #whatsapp{
+            text-decoration: none;
+        }
+
         button{
             display: flex;
             align-items: center;
@@ -95,6 +99,8 @@ export const Container = styled.article`
             &:hover{
                 background-color: var(--color-secundary-dark);
             }
+
+            
         }
     }
 
