@@ -46,7 +46,6 @@ export const Container = styled.div`
         height: 10.4rem;
         border-radius: 0.8rem;
        
-
         font-family: 'Archivo', sans-serif;
         font-weight: 700;
         text-decoration: none;
@@ -84,6 +83,12 @@ export const Container = styled.div`
 
         img{
             margin-left: 0.8rem;
+        }
+    }
+
+    @media(max-width: 700px){
+        .button-box .buttons{
+            max-width: 15rem;
         }
     }
 
