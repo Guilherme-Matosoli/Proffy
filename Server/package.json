@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec ts-node --transpile-only  ./src/server.ts",
     "build": "tsc",
-    "start": "node ./build/server/js",
+    "start": "node ./build/src/server.js",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
     "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
   },
@@ -18,7 +18,7 @@
     "@types/express": "^4.17.7",
     "nodemon": "^2.0.20",
     "ts-node-dev": "^1.0.0-pre.56",
-    "typescript": "^3.9.7"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "cors": "^2.8.5",
